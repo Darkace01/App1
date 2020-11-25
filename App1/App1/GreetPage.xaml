@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.GreetPage">
-
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    Android="0,40,0,0"></OnPlatform>
+    </ContentPage.Padding>
     <StackLayout  BindingContext="{x:Reference Slider}" HorizontalOptions="Center">
         <BoxView Color="Green" Opacity="{Binding Value}"></BoxView>
         <Label Text="{Binding Value, 

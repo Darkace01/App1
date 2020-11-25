@@ -16,13 +16,6 @@ namespace App1
         {
             InitializeComponent();
             Slider.Value = 0.1;
-
-            Device.OnPlatform(
-                Android: () =>
-                {
-                    Padding = new Thickness(0, 40,0,0);
-                }
-                );
         }
 
 
