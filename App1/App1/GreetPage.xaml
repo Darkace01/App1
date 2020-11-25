@@ -4,7 +4,7 @@
              x:Class="App1.GreetPage">
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="Hello World"></Label>
-        <Slider/>
+        <Label Text="Hello World" x:Name="Label"></Label>
+        <Slider ValueChanged="Slider_OnValueChanged" x:Name="Slider"/>
     </StackLayout>
 </ContentPage>

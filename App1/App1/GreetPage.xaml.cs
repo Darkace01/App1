@@ -15,9 +15,13 @@ namespace App1
         public GreetPage()
         {
             InitializeComponent();
-
+            Slider.Value = 0.1;
         }
 
-        
+
+        private void Slider_OnValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            Label.Text = String.Format("Value is {0:F2}", e.NewValue);
+        }
     }
 }
