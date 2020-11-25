@@ -41,6 +41,7 @@ namespace App1
             {
                 Height = new GridLength(1, GridUnitType.Auto)
             });
+            Content = grid;
         }
     }
 }

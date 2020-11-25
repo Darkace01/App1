@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.GridPage">
-    <Grid BackgroundColor="Yellow"
+    <!--<Grid BackgroundColor="Yellow"
           RowSpacing="20"
           ColumnSpacing="20">
         <Grid.RowDefinitions>
@@ -23,5 +23,5 @@
         <Label Grid.Row="1" Grid.Column="1" Text="Label 4" BackgroundColor="Silver"></Label>
         <Label Grid.Row="2" Grid.ColumnSpan="3" Text="Column SPan" BackgroundColor="Silver"></Label>
         <Label Grid.Column="2" Grid.RowSpan="3" Text="RowSpan" BackgroundColor="Silver"></Label>
-    </Grid>
+    </Grid>-->
 </ContentPage>
