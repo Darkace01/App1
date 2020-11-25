@@ -4,10 +4,10 @@
              x:Class="App1.GreetPage">
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding 
-            Source={x:Reference Name=Slider}, 
-            Path=Value, 
+        <Label BindingContext="{x:Reference Slider}" Text="{Binding Value, 
             StringFormat='Value is {0:F2}'}"
+
+               Opacity="{Binding Value}"
                x:Name="Label"/>
         <Slider x:Name="Slider"/>
     </StackLayout>
