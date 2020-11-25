@@ -8,7 +8,7 @@
             Source={x:Reference Name=Slider}, 
             Path=Value, 
             StringFormat='Value is {0:F2}'}"
-               x:Name="Label"></Label>
+               x:Name="Label"/>
         <Slider x:Name="Slider"/>
     </StackLayout>
 </ContentPage>
