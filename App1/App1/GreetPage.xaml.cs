@@ -19,9 +19,5 @@ namespace App1
         }
 
 
-        private void Slider_OnValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            Label.Text = String.Format("Value is {0:F2}", e.NewValue);
-        }
     }
 }
