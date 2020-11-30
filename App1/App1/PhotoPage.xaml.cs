@@ -16,13 +16,7 @@ namespace App1
         {
             InitializeComponent();
 
-            //First method
-            //var imageSource = (UriImageSource) ImageSource.FromUri(new Uri("http://.."));
-
-            var imageSource = new UriImageSource() { Uri = new Uri("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg") };
-            imageSource.CachingEnabled = false;
-
-            Image.Source = imageSource;
+            Image.Source = ImageSource.FromResource("App1.Images.background.jpg");
         }
     }
 }
