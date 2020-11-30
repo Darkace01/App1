@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage BackgroundColor="Black" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App1.MarkUpExtensions"
              x:Class="App1.PhotoPage">
-    <Image Source="{local:EmbeddedImage App1.Images.background.jpg}" x:Name="Image" Aspect="AspectFill"/>
+    <Button  x:Name="btn">
+        <Button.Image>
+            <OnPlatform x:TypeArguments="FileImageSource" Android="edge.png"/>
+        </Button.Image>
+    </Button>
+
 </ContentPage>
