@@ -10,7 +10,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new RelativePage();
+            MainPage = new PhotoPage();
         }
 
         protected override void OnStart()
