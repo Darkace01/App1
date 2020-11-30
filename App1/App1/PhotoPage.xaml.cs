@@ -16,7 +16,7 @@ namespace App1
         {
             InitializeComponent();
 
-            Image.Source = ImageSource.FromResource("App1.Images.background.jpg");
+            //Image.Source = ImageSource.FromResource("App1.Images.background.jpg");
         }
     }
 }
