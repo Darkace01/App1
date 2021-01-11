@@ -14,24 +14,29 @@ namespace App1
     public partial class Demo : ContentPage
     {
         private ObservableCollection<ContactGroup> _contacts;
-        public Demo()
-        {
-            InitializeComponent();
 
-            
-            _contacts = new ObservableCollection<ContactGroup>
+        ObservableCollection<ContactGroup> GetContact()
+        {
+            return new ObservableCollection<ContactGroup>
             {
                 new ContactGroup("K", "K")
                 {
                     new Contact {Name = "Kazeem", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"}
                 },
-                
+
                 new ContactGroup("J", "J")
                 {
                     new Contact {Name = "John", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets talk"},
                     new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets not talk"}
                 }
             };
+        }
+        public Demo()
+        {
+            InitializeComponent();
+
+
+            _contacts = GetContact();
 
             listView.ItemsSource = _contacts;
         }
@@ -67,6 +72,12 @@ namespace App1
             var button = sender as Button;
             var contact = button.CommandParameter as Contact;
             DisplayAlert("Do you want to follow this user?", contact.Name, "YES");
+        }
+
+        private void ListView_OnRefreshing(object sender, EventArgs e)
+        {
+            listView.ItemsSource = GetContact();
+            listView.EndRefresh();
         }
     }
 }

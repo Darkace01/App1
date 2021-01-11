@@ -9,7 +9,9 @@
               HasUnevenRows="True"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortTitle}">
+              GroupShortNameBinding="{Binding ShortTitle}"
+              IsPullToRefreshEnabled="True"
+              Refreshing="ListView_OnRefreshing">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
