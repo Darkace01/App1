@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.SearchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search..." TextChanged="Search_OnTextChanged"/>
+            <ListView x:Name="searchlistView" SeparatorVisibility="None"
+                      ItemSelected="ListView_OnItemSelected"
+                      ItemTapped="ListView_OnItemTapped"
+                      HasUnevenRows="True"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="ListView_OnRefreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="3">
+                                <Image Source="{Binding ImageUrl}" />
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Status}" TextColor="Gray"/>
+                                </StackLayout>
+                                <Button Text="Follow" CommandParameter="{Binding .}" Clicked="Follow_OnClicked"/>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Call" Clicked="Call_OnClicked" CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Delete" Clicked="Delete_OnClicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
