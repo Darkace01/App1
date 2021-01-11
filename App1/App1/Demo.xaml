@@ -19,8 +19,12 @@
                             <Label Text="{Binding Name}"/>
                             <Label Text="{Binding Status}" TextColor="Gray"/>
                         </StackLayout>
-                        <Button Text="Follow"/>
+                        <Button Text="Follow" CommandParameter="{Binding .}" Clicked="Follow_OnClicked"/>
                     </StackLayout>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Call" Clicked="Call_OnClicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" Clicked="Delete_OnClicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

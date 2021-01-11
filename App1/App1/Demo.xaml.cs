@@ -43,5 +43,24 @@ namespace App1
             var contact = e.Item as Contact;
             DisplayAlert("Selected", contact.Name, "Ok");
         }
+
+        private void Call_OnClicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var contact = menuItem.CommandParameter as Contact;
+            DisplayAlert("Call", contact.Name, "Ok");
+        }
+
+        private void Delete_OnClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Follow_OnClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var contact = button.CommandParameter as Contact;
+            DisplayAlert("Do you want to follow this user?", contact.Name, "YES");
+        }
     }
 }
