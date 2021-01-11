@@ -17,10 +17,18 @@ namespace App1
             InitializeComponent();
 
             
-            listView.ItemsSource = new List<Contact>
+            listView.ItemsSource = new List<ContactGroup>
             {
-                new Contact {Name = "Kazeem", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"},
-                new Contact {Name = "John", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets talk"}
+                new ContactGroup("K", "K")
+                {
+                    new Contact {Name = "Kazeem", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"}
+                },
+                
+                new ContactGroup("J", "J")
+                {
+                    new Contact {Name = "John", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets talk"},
+                    new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets not talk"}
+                }
             };
         }
     }
