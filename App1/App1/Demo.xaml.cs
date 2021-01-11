@@ -31,5 +31,17 @@ namespace App1
                 }
             };
         }
+
+        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var contact = e.SelectedItem as Contact;
+            DisplayAlert("Selected", contact.Name, "Ok");
+        }
+
+        private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var contact = e.Item as Contact;
+            DisplayAlert("Selected", contact.Name, "Ok");
+        }
     }
 }
