@@ -10,7 +10,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new PhotoPage();
+            MainPage = new Demo();
         }
 
         protected override void OnStart()
