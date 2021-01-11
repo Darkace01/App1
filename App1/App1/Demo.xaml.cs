@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,13 @@ namespace App1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Demo : ContentPage
     {
+        private ObservableCollection<ContactGroup> _contacts;
         public Demo()
         {
             InitializeComponent();
 
             
-            listView.ItemsSource = new List<ContactGroup>
+            _contacts = new ObservableCollection<ContactGroup>
             {
                 new ContactGroup("K", "K")
                 {
@@ -30,6 +32,8 @@ namespace App1
                     new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets not talk"}
                 }
             };
+
+            listView.ItemsSource = _contacts;
         }
 
         private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -51,9 +55,11 @@ namespace App1
             DisplayAlert("Call", contact.Name, "Ok");
         }
 
+        
         private void Delete_OnClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var contact = (sender as MenuItem).CommandParameter as ContactGroup;
+            _contacts.Remove(contact);
         }
 
         private void Follow_OnClicked(object sender, EventArgs e)
