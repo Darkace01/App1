@@ -19,7 +19,7 @@ namespace App1
 
         async void Button_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new IntroductionPage());
+            await Navigation.PushModalAsync(new IntroductionPage());
         }
     }
 }
