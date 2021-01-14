@@ -33,14 +33,18 @@ namespace App1
             searchlistView.ItemsSource = _contacts;
         }
 
-        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if(e.SelectedItem == null)
+                return;
             var contact = e.SelectedItem as Contact;
-            DisplayAlert("Selected", contact.Name, "Ok");
+            await Navigation.PushAsync(new SearchDetailPage(contact));
+            searchlistView.SelectedItem = null;
         }
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
+
             var contact = e.Item as Contact;
             DisplayAlert("Selected", contact.Name, "Ok");
         }
@@ -59,12 +63,6 @@ namespace App1
             _contacts.Remove(contact);
         }
 
-        private void Follow_OnClicked(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            var contact = button.CommandParameter as Contact;
-            DisplayAlert("Do you want to follow this user?", contact.Name, "YES");
-        }
 
         private void ListView_OnRefreshing(object sender, EventArgs e)
         {
@@ -76,5 +74,6 @@ namespace App1
         {
             searchlistView.ItemsSource =  GetContact(e.NewTextValue);
         }
+
     }
 }
