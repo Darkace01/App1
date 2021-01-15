@@ -19,9 +19,11 @@ namespace App1
 
         async void Ask_OnClicked(object sender, EventArgs e)
         {
-            var response = await DisplayAlert("Warning", "Are you sure", "Yes", "No");
-            if (response)
-                await DisplayAlert("Done", "Your Response Has Been Saved", "Ok");
+            var response = await DisplayActionSheet("Title", "Cancel", "Delete", "Copy Link", "Message", "Email");
+            await DisplayAlert("Response", response, "Ok");
+            //var response = await DisplayAlert("Warning", "Are you sure", "Yes", "No");
+            //if (response)
+            //    await DisplayAlert("Done", "Your Response Has Been Saved", "Ok");
         }
     }
 }
