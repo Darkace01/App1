@@ -10,7 +10,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new ContactMasterPage();
+            MainPage = new TabPage();
         }
 
         protected override void OnStart()
