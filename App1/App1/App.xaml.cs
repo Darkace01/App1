@@ -10,7 +10,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new TabPage();
+            MainPage = new SwipePage();
         }
 
         protected override void OnStart()
