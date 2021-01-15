@@ -22,11 +22,11 @@ namespace App1
                     Name = "John", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
                     Status = "Hey lets talk"
                 },
-                new Contact
-                {
-                    Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
-                    Status = "Hey lets not talk"
-                }
+                new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Later"},
+                new Contact {Name = "Bola", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Gerrarahere"},
+                new Contact {Name = "Nayyar", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Whats Up"},
+                new Contact {Name = "Tim", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Piss Off"},
+                new Contact {Name = "Corry", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Not Now"}
             };
         }
 

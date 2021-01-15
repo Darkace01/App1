@@ -19,8 +19,12 @@ namespace App1
             var contacts = new ObservableCollection<Contact>
             {
                     new Contact {Name = "John", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets talk"},
-                    new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Hey lets not talk"}
-            };
+                    new Contact {Name = "James", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Later"},
+                    new Contact {Name = "Bola", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Gerrarahere"},
+                    new Contact {Name = "Nayyar", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Whats Up"},
+                    new Contact {Name = "Tim", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Piss Off"},
+                    new Contact {Name = "Corry", ImageUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", Status = "Not Now"}
+                    };
             if (String.IsNullOrWhiteSpace(searcText))
                 return contacts;
             return (ObservableCollection<Contact>)contacts.Where(c => c.Name.StartsWith(searcText));
@@ -44,7 +48,7 @@ namespace App1
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-
+            return;
             var contact = e.Item as Contact;
             DisplayAlert("Selected", contact.Name, "Ok");
         }
