@@ -10,7 +10,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new RequestActionPage();
+            MainPage = new NavigationPage(new ToolBarPage());
         }
 
         protected override void OnStart()
